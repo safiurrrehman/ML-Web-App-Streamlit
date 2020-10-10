@@ -56,6 +56,13 @@ x_train, x_test, y_train, y_test = split(df)
 
 class_names = ['edible', 'poisonous']
 
+
+
+
+if st.sidebar.checkbox("Show Raw Data", False):
+    st.subheader("Mushroom Dataset Classification")
+    st.write(df)
+
 st.sidebar.subheader("Choose Classifier")
 classifier = st.sidebar.selectbox("Classifier", ("Support Vector Machine (SVM)", "Logistic Regression", "Random Forest"))
 
@@ -128,7 +135,3 @@ if classifier == 'Random Forest':
 
 
 
-
-if st.sidebar.checkbox("Show Raw Data", False):
-    st.subheader("Mushroom Dataset Classification")
-    st.write(df)
